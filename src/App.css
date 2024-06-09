@@ -1,0 +1,81 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.solid:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.card {
+  padding: 2em;
+  min-width: 300px;
+}
+
+.card img {
+  max-width: 300px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+button:active {
+  background-color: rgb(20, 94, 138);
+}
+
+.puff-name {
+  font-size: 2rem;
+  line-height: 1rem;
+  font-weight: 800;
+}
+
+ul {
+  list-style: none;
+  text-align: start;
+}
+
+.previous-pulls {
+  min-height: 300px;
+}
+
+.common {
+  color: rgb(235, 235, 235);
+}
+.uncommon {
+  color: rgb(88, 214, 98);
+}
+.rare {
+  color: rgb(36, 228, 212);
+filter: drop-shadow(0px 0px 10px rgba(36, 228, 212, .2))
+}
+.super-rare {
+  color: rgb(69, 101, 243);
+  filter: drop-shadow(0px 0px 10px rgba(1, 26, 255, 0.7))
+  
+}
+.ultra-rare {
+  color: rgb(133, 89, 255);
+  filter: drop-shadow(0px 0px 10px rgba(71, 16, 219, 0.9))
+}
+.legendary {
+  color: rgb(255, 243, 72);
+  filter: drop-shadow(0px 0px 20px rgba(255, 230, 100, 1.0))
+}
