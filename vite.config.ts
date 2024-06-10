@@ -4,7 +4,7 @@ import solid from 'vite-plugin-solid'
 export default defineConfig({
   plugins: [solid()],
   server: {
-    port: 6012,
+    port: 8080,
     host: '127.0.0.1',
     // proxy: {
     //   "/api": {
