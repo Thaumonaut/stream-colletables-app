@@ -10,7 +10,7 @@ export type collectable = {
 
 
 function App() {
-  const [index, setIndex] = createSignal(0)
+  // const [index, setIndex] = createSignal(0)
   const [items, setItems] = createSignal<collectable[]>()
   const [collectables, setCollectables] = createSignal<collectable[]>([])
   const [lastCollected, setLastCollected] = createSignal<collectable[]>([])
