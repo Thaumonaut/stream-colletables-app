@@ -39,10 +39,10 @@ function App() {
     setCollectables(data)
   }
 
-  const makeRequest = async function(amount: number) {
+  const makeRequest = async function (amount: number) {
     let fetchString: string = import.meta.env.VITE_SERVER_URL
     fetchString += "/api/collectables/random"
-    if(amount > 1) fetchString += `?amount=${amount}` 
+    if (amount > 1) fetchString += `?amount=${amount}`
     else fetchString += "/"
     const res = await fetch(fetchString)
 
@@ -68,7 +68,7 @@ function App() {
 
   const getRandomCollectable = async function (amount: number) {
 
-    if((tokens() - amount) < 0) {
+    if ((tokens() - amount) < 0) {
       console.log(await Twitch.ext.bits.getProducts())
       switch (amount) {
         case 1:
@@ -101,7 +101,7 @@ function App() {
       })
       return
     }
-      // collection.push(await makeRequest())
+    // collection.push(await makeRequest())
     setTokens(tokens() - amount)
     const data = await makeRequest(amount)
     setItems(data)
@@ -109,16 +109,18 @@ function App() {
 
   return (
     <>
-    <header>
-      <h1>Stream Collectables</h1>
-      <p>Tokens Remaining: {tokens()}</p>
-    </header>
-      <div class='centered'>
-        <button onclick={()=> setTokens(tokens() + 1)}>+1 Token</button>
-        <button onclick={()=> setTokens(tokens() + 5)}>+5 Token</button>
-        <button onclick={()=> setTokens(tokens() + 10)}>+10 Token</button>
-        <button onclick={()=> setTokens(tokens() + 100)}>+100 Token</button>
-      </div>
+      <header>
+        <h1>Stream Collectables</h1>
+        <p>Tokens Remaining: {tokens()}</p>
+      </header>
+      <Show when={import.meta.env.DEV}>
+        <div class='centered'>
+          <button onclick={() => setTokens(tokens() + 1)}>+1 Token</button>
+          <button onclick={() => setTokens(tokens() + 5)}>+5 Token</button>
+          <button onclick={() => setTokens(tokens() + 10)}>+10 Token</button>
+          <button onclick={() => setTokens(tokens() + 100)}>+100 Token</button>
+        </div>
+      </Show>
       <div class='wish'>
         <button onClick={() => getRandomCollectable(1)}>
           1 Pull
@@ -135,12 +137,13 @@ function App() {
           <Show when={items()}>
             <div class="puff-grid">
               {items()?.map((item: collectable) => {
-                return(
+                return (
                   <div class={`puff ${item.rarity.trimEnd().replace(" ", "-")}`}>
                     <img src={item.img} alt="" />
-                    <p class={`puff-name ${item.rarity.trimEnd().replace(" ", "-")}`}> {item. name} </p>
+                    <p class={`puff-name ${item.rarity.trimEnd().replace(" ", "-")}`}> {item.name} </p>
                   </div>
-                )})}
+                )
+              })}
               {/* <Carousel activeIndex={index()} onSelect={handleSelect} interval={null} keyboard>
                 {items()?.map((item: collectable) => {
                   return(
