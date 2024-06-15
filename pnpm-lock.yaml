@@ -11,6 +11,15 @@ importers:
       '@floating-ui/dom':
         specifier: ^1.6.5
         version: 1.6.5
+      '@solid-primitives/script-loader':
+        specifier: ^2.1.2
+        version: 2.1.2(solid-js@1.8.17)
+      '@types/twitch-ext':
+        specifier: ^1.24.9
+        version: 1.24.9
+      solid-bootstrap:
+        specifier: ^1.0.20
+        version: 1.0.20(solid-js@1.8.17)
       solid-js:
         specifier: ^1.8.15
         version: 1.8.17
@@ -122,6 +131,10 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
+
+  '@babel/runtime@7.24.7':
+    resolution: {integrity: sha512-UwgBRMjJP+xv857DCngvqXI3Iq6J4v0wXmwc6sapg+zyhbwmQX67LUEFrkK5tbyJ30jGuG3ZvWpBiB9LCy1kWw==}
+    engines: {node: '>=6.9.0'}
 
   '@babel/template@7.24.7':
     resolution: {integrity: sha512-jYqfPrU9JTF0PmPy1tLYHW4Mp4KlgxJD9l2nP9fD6yT/ICi554DmrWBAEYpIelzjHf1msDP3PxJIRt/nFNfBig==}
@@ -300,6 +313,9 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
+  '@popperjs/core@2.11.8':
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+
   '@rollup/rollup-android-arm-eabi@4.18.0':
     resolution: {integrity: sha512-Tya6xypR10giZV1XzxmH5wr25VcZSncG0pZIjfePT0OVBvqNEurzValetGNarVrGiq66EBVAFn15iYX4w6FKgQ==}
     cpu: [arm]
@@ -380,6 +396,11 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@solid-primitives/script-loader@2.1.2':
+    resolution: {integrity: sha512-dIeJ3FWfBAlYZzQ0XLpv1ukHcTxPYphCURS01Hri18ykb28eCOdYtgn3OVNgYzAvm9y8rW5IoyIMY+JzYD6Fhw==}
+    peerDependencies:
+      solid-js: ^1.6.12
+
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
 
@@ -394,6 +415,9 @@ packages:
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
+
+  '@types/twitch-ext@1.24.9':
+    resolution: {integrity: sha512-YUArlcgu3Hfln0odpkhZXtQIhKquR9usEjWmkpgz+uiUsAFmBDtA27uxLTaOWZHSfWcz8va2mQaNm1g+JRoh0w==}
 
   ansi-styles@3.2.1:
     resolution: {integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==}
@@ -441,6 +465,9 @@ packages:
     peerDependenciesMeta:
       supports-color:
         optional: true
+
+  dom-helpers@5.2.1:
+    resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
 
   electron-to-chromium@1.4.796:
     resolution: {integrity: sha512-NglN/xprcM+SHD2XCli4oC6bWe6kHoytcyLKCWXmRL854F0qhPhaYgUswUsglnPxYaNQIg2uMY4BvaomIf3kLA==}
@@ -520,6 +547,9 @@ packages:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
 
+  regenerator-runtime@0.14.1:
+    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
+
   rollup@4.18.0:
     resolution: {integrity: sha512-QmJz14PX3rzbJCN1SG4Xe/bAAX2a6NpCP8ab2vfu2GiUr8AQcr2nCV/oEO3yneFarB67zk8ShlIyWb2LGTb3Sg==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -539,8 +569,23 @@ packages:
     resolution: {integrity: sha512-n6ZMQX5q0Vn19Zq7CIKNIo7E75gPkGCFUEqDpa8jgwpYr/vScjqnQ6H09t1uIiZ0ZSK0ypEGvrYK2bhBGWsGdw==}
     engines: {node: '>=10'}
 
+  solid-bootstrap-core@2.0.0:
+    resolution: {integrity: sha512-tw1me1iEvI+UzYRL2Gs53MP51WVwx785CU+6KQVGhaLESw3OoayeFLhe1CvUYb7kuskjtNGyAorZMdMwBJQIBA==}
+    peerDependencies:
+      solid-js: '>=1.6.0'
+
+  solid-bootstrap@1.0.20:
+    resolution: {integrity: sha512-2Dhmg+lcEzrjBHh04XmVESFda/EVMwyr0Zx4w6r7cOeQBxz4JtX5AQRwv6cXx3AC9ZjBdeOlYpVtH/hO/wb/1A==}
+    peerDependencies:
+      solid-js: '>=1.6.0'
+
   solid-js@1.8.17:
     resolution: {integrity: sha512-E0FkUgv9sG/gEBWkHr/2XkBluHb1fkrHywUgA6o6XolPDCJ4g1HaLmQufcBBhiF36ee40q+HpG/vCZu7fLpI3Q==}
+
+  solid-react-transition@1.0.11:
+    resolution: {integrity: sha512-YMT7z6sOupCicDtX19156vbVOm3vCIgjVhPTybR9gLKiIPrDB2NDVqnQk4kpNCDZTOwSjLTOyUQw0xJnXgDg2A==}
+    peerDependencies:
+      solid-js: '>=1.6.0'
 
   solid-refresh@0.6.3:
     resolution: {integrity: sha512-F3aPsX6hVw9ttm5LYlth8Q15x6MlI/J3Dn+o3EQyRTtTxidepSTwAYdozt01/YA+7ObcciagGEyXIopGZzQtbA==}
@@ -752,6 +797,10 @@ snapshots:
       '@babel/core': 7.24.7
       '@babel/helper-plugin-utils': 7.24.7
 
+  '@babel/runtime@7.24.7':
+    dependencies:
+      regenerator-runtime: 0.14.1
+
   '@babel/template@7.24.7':
     dependencies:
       '@babel/code-frame': 7.24.7
@@ -876,6 +925,8 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
+  '@popperjs/core@2.11.8': {}
+
   '@rollup/rollup-android-arm-eabi@4.18.0':
     optional: true
 
@@ -924,6 +975,10 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.18.0':
     optional: true
 
+  '@solid-primitives/script-loader@2.1.2(solid-js@1.8.17)':
+    dependencies:
+      solid-js: 1.8.17
+
   '@types/babel__core@7.20.5':
     dependencies:
       '@babel/parser': 7.24.7
@@ -946,6 +1001,8 @@ snapshots:
       '@babel/types': 7.24.7
 
   '@types/estree@1.0.5': {}
+
+  '@types/twitch-ext@1.24.9': {}
 
   ansi-styles@3.2.1:
     dependencies:
@@ -993,6 +1050,11 @@ snapshots:
   debug@4.3.5:
     dependencies:
       ms: 2.1.2
+
+  dom-helpers@5.2.1:
+    dependencies:
+      '@babel/runtime': 7.24.7
+      csstype: 3.1.3
 
   electron-to-chromium@1.4.796: {}
 
@@ -1067,6 +1129,8 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
+  regenerator-runtime@0.14.1: {}
+
   rollup@4.18.0:
     dependencies:
       '@types/estree': 1.0.5
@@ -1097,11 +1161,29 @@ snapshots:
 
   seroval@1.0.7: {}
 
+  solid-bootstrap-core@2.0.0(solid-js@1.8.17):
+    dependencies:
+      '@popperjs/core': 2.11.8
+      dom-helpers: 5.2.1
+      solid-js: 1.8.17
+      solid-react-transition: 1.0.11(solid-js@1.8.17)
+
+  solid-bootstrap@1.0.20(solid-js@1.8.17):
+    dependencies:
+      dom-helpers: 5.2.1
+      solid-bootstrap-core: 2.0.0(solid-js@1.8.17)
+      solid-js: 1.8.17
+      solid-react-transition: 1.0.11(solid-js@1.8.17)
+
   solid-js@1.8.17:
     dependencies:
       csstype: 3.1.3
       seroval: 1.0.7
       seroval-plugins: 1.0.7(seroval@1.0.7)
+
+  solid-react-transition@1.0.11(solid-js@1.8.17):
+    dependencies:
+      solid-js: 1.8.17
 
   solid-refresh@0.6.3(solid-js@1.8.17):
     dependencies:

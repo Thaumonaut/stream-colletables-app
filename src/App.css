@@ -1,17 +1,29 @@
 #root {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem;
+
+  --black: #3a3a3a;
+  --white: #eaeaea;
 }
 
-h1 {
+header {
   text-align: center;
-  font-size: 2rem;
+  background: #0a0a0a;
+  margin: 0;
+  width: 100%;
+  padding: 1rem 0rem;
+  color: #ffec82;
+  text-shadow: 0 0 15px #ffe100;
+  font-weight: 400;
 }
 
-h3 {
+header h1 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+h2, h3 {
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -21,35 +33,94 @@ p {
   padding: 0;
 }
 
+aside {
+  padding-inline: 1rem;
+}
+
 .pulls-since {
   font-size: smaller;
 }
 
 .card {
-  padding: 2em;
-  min-width: 300px;
+  width: 100%;
   text-align: center;
 }
 
 .card img {
-  margin-top: 1rem;
-  max-width: 250px;
+  max-width: 75%;
+}
+
+.carousel-item.active .puff {
+  width: 200px;
+  height: 200px;
+  background-color: antiquewhite;
+  position: relative;
+  z-index: 5;
+  margin: auto;
+}
+.carousel-item {
+  width: 300px;
+  display: block;
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  align-items: center;
 }
 
-button:active {
-  background-color: rgb(20, 94, 138);
+.puff-grid {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: .5rem .5rem;
+}
+
+.puff {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  padding: 1rem .5rem;
+  border: var(--primary) solid 5px;
+  background-color: var(--background);
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  padding-inline: 1rem;
+}
+
+button {
+  margin-inline: .1rem;
+  margin-block: .4rem;
+  padding: 0.2rem .4rem;
+}
+
+.wish {
+  margin: auto;
+  display: flex;
+  position: fixed;
+  bottom: 5%;
+  left: 0px;
+  right: 0px;
+  max-width: fit-content;
+  z-index: 999;
+  filter: drop-shadow(5px 0 15px black)
+}
+
+.wish button {
+  padding: 1rem;
+  margin: 0.2rem;
 }
 
 .puff-name {
-  margin-top: 2rem;
-  font-size: 2rem;
-  line-height: 4rem;
+  margin-top: .2rem;
+  font-size: 1rem;
+  line-height: 1.2rem;
   font-weight: 800;
 }
 
@@ -65,26 +136,44 @@ ul {
 }
 
 .common {
-  color: rgb(179, 179, 179);
+  --primary: rgb(179, 179, 179);
+  color: var(--white);
+  --secondary: rgb(79, 79, 79);
+  --background: rgb(32, 32, 32);
 }
 .uncommon {
-  color: rgb(88, 214, 98);
+  --primary: rgb(88, 214, 98);
+  color: var(--primary);
+  --secondary: rgb(43, 133, 51);
+  --background: rgb(28, 44, 30);
 }
 .super-rare {
-  color: rgb(36, 228, 212);
-filter: drop-shadow(0px 0px 10px rgba(36, 228, 212, .2))
+  --primary: rgb(36, 228, 212);
+  color: var(--primary);
+  --secondary: rgb(29, 143, 133);
+  --background: rgb(40, 66, 64);
+  filter: drop-shadow(0px 0px 10px rgba(36, 228, 212, .2))
 }
 .rare {
-  color: rgb(69, 101, 243);
+  --primary: rgb(69, 101, 243);
+  color: var(--primary);
+  --secondary: rgb(41, 61, 151);
+  --background: rgb(39, 43, 59);
   filter: drop-shadow(0px 0px 10px rgba(1, 26, 255, 0.7))
-  
 }
 .ultra-rare {
-  color: rgb(133, 89, 255);
+  --primary: rgb(133, 89, 255);
+  color: var(--primary);
+  --secondary: rgb(66, 41, 133);
+  --background: rgb(56, 50, 73);
   filter: drop-shadow(0px 0px 10px rgba(71, 16, 219, 0.9))
 }
 .legendary {
-  color: rgb(255, 243, 72);
+  /* color: var(--black); */
+  --primary: rgb(255, 243, 72);
+  color: var(--primary);
+  --secondary: rgb(187, 175, 14);
+  --background: rgb(53, 51, 43);
   filter: drop-shadow(0px 0px 20px rgba(255, 230, 100, 1.0))
 }
 
