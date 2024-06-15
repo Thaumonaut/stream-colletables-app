@@ -3,9 +3,10 @@ import { createSignal, createEffect, Show } from 'solid-js'
 import './App.css'
 
 export type collectable = {
-  name: string,
-  rarity: string,
-  img: string,
+  item_name: string;
+  rarity: string;
+  item_id?: number | undefined;
+  item_img?: string | null | undefined;
 }
 
 
@@ -31,6 +32,8 @@ function App() {
   }
 
   const getCollectables = async function () {
+
+    
     Twitch.ext.onAuthorized((_values) => {
       //TODO Auth token
     })
@@ -43,10 +46,8 @@ function App() {
     let fetchString: string = import.meta.env.VITE_SERVER_URL
     fetchString += "/api/collectables/random"
     if (amount > 1) fetchString += `?amount=${amount}`
-    else fetchString += "/"
     const res = await fetch(fetchString)
-
-    const data: collectable[] = await res.json()
+    const data:collectable[] = await res.json()
 
     data.forEach(item => {
       setPity(pity() + 1)
@@ -139,8 +140,8 @@ function App() {
               {items()?.map((item: collectable) => {
                 return (
                   <div class={`puff ${item.rarity.trimEnd().replace(" ", "-")}`}>
-                    <img src={item.img} alt="" />
-                    <p class={`puff-name ${item.rarity.trimEnd().replace(" ", "-")}`}> {item.name} </p>
+                    <img src={item.item_img!} alt="" />
+                    <p class={`puff-name ${item.rarity.trimEnd().replace(" ", "-")}`}> {item.item_name} </p>
                   </div>
                 )
               })}
@@ -171,7 +172,7 @@ function App() {
               {collectables().map(c => {
                 return (
                   <li>
-                    {c.name} : <span class={c?.rarity.trimEnd().replace(" ", "-")}>{c.rarity}</span>
+                    {c.item_name} : <span class={c.rarity}>{c.rarity}</span>
                   </li>
                 )
               })}
@@ -181,7 +182,7 @@ function App() {
           <p class='pulls-since'>Pulls since last Legendary: <span>{pity()}</span></p>
           <ul class='previous-pulls'>
             {lastCollected().map(c => {
-              return (<li class={c?.rarity.trimEnd().replace(" ", "-")}>{c.name}</li>)
+              return (<li class={c?.rarity}>{c.item_name}</li>)
             })}
           </ul>
         </aside>
