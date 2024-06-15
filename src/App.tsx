@@ -114,14 +114,14 @@ function App() {
         <h1>Stream Collectables</h1>
         <p>Tokens Remaining: {tokens()}</p>
       </header>
-      <Show when={import.meta.env.DEV}>
+      {/* <Show when={import.meta.env.DEV}> */}
         <div class='centered'>
           <button onclick={() => setTokens(tokens() + 1)}>+1 Token</button>
           <button onclick={() => setTokens(tokens() + 5)}>+5 Token</button>
           <button onclick={() => setTokens(tokens() + 10)}>+10 Token</button>
           <button onclick={() => setTokens(tokens() + 100)}>+100 Token</button>
         </div>
-      </Show>
+      {/* </Show> */}
       <div class='wish'>
         <button onClick={() => getRandomCollectable(1)}>
           1 Pull
