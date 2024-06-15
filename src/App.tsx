@@ -10,7 +10,6 @@ export type collectable = {
 
 
 function App() {
-  // const [index, setIndex] = createSignal(0)
   const [items, setItems] = createSignal<collectable[]>()
   const [collectables, setCollectables] = createSignal<collectable[]>([])
   const [lastCollected, setLastCollected] = createSignal<collectable[]>([])
@@ -69,8 +68,6 @@ function App() {
 
   const getRandomCollectable = async function (amount: number) {
 
-    handleSelect(0, null)
-
     if((tokens() - amount) < 0) {
       console.log(await Twitch.ext.bits.getProducts())
       switch (amount) {
@@ -109,14 +106,6 @@ function App() {
     const data = await makeRequest(amount)
     setItems(data)
   }
-
-  const handleSelect = (
-    selectedIndex: number,
-    e: Record<string, unknown> | null
-  ) => {
-    console.log(e)
-    setIndex(selectedIndex);
-  };
 
   return (
     <>
